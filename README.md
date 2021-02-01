@@ -5,15 +5,15 @@ Youtube demonstration: https://youtu.be/0QF3Jfd4_4U
 
 ## Epics & Stories
 **Epic #1 Create webapp for user to apply for loan online**
-Story#1.1 As a user, I want to be able to create and account and login to my account
-Story#1.2 As a user, I want to be able to apply for loan by inputting the amount and selecting terms
-Story#1.3 As a user, I want to be able to see my payment history
-Story#1.4 As a user, I want to be able to pay my weekly repayment
+1) Story#1.1 As a user, I want to be able to create and account and login to my account
+2) Story#1.2 As a user, I want to be able to apply for loan by inputting the amount and selecting terms
+3) Story#1.3 As a user, I want to be able to see my payment history
+4) Story#1.4 As a user, I want to be able to pay my weekly repayment
 
 **Epic #2 Create a webapp for an admin user to approve or reject loan**
-Story#2.1 As an admin, I want to be able to see the list of loan applications
-Story#2.2 As an admin, I want to be able to approve or reject applications
-Story#2.3 As an admin, I want to see the breakdown of loan repayment
+1) Story#2.1 As an admin, I want to be able to see the list of loan applications
+2) Story#2.2 As an admin, I want to be able to approve or reject applications
+3) Story#2.3 As an admin, I want to see the breakdown of loan repayment
 
 **Tasks breakdown**
 1) Use Laravel Passport to create API that support OAuth2 authentication
