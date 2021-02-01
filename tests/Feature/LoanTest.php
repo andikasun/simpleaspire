@@ -13,7 +13,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class LoanTest extends TestCase
 {
-    use DatabaseMigrations;
 
     //mock login
     public function loginWithFakeUser(){
@@ -64,7 +63,7 @@ class LoanTest extends TestCase
                 "status" => "SUCCESS",
                 "data" => [
                     "user_id" => 1,
-                    'amount' => 1000,
+                    'amount' => '1000.00',
                     'loan_term' => 10,
                     'repayment_frequency' => 'WEEKLY',
                     'status' => 'APPLIED'
@@ -92,7 +91,28 @@ class LoanTest extends TestCase
                     'amount' => 1000,
                     'loan_term' => 10,
                     'repayment_frequency' => 'WEEKLY',
-                    'status' => 'APPLIED'
+                    'status' => 'APPROVED'
+                ]
+            ]);
+    }
+    public function testNegativeLoan() {
+        $user = new User([
+            'id' => 1,
+            'name' => 'yish'
+        ]);
+        Passport::actingAs($user);
+
+        $loanData = [
+            "amount" => -100,
+            'loan_term' => '10',
+            'repayment_frequency' => 'WEEKLY',
+        ];
+        $this->json('POST', 'api/loan', $loanData, ['Accept' => 'application/json'])
+            ->assertStatus(500)
+            ->assertJson([
+                "status" => "FAILED",
+                "error" => [
+                    "amount"=>["The amount must be at least 100."]
                 ]
             ]);
 

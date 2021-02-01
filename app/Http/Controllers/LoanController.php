@@ -43,8 +43,8 @@ class LoanController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'amount' => 'required',
-            'loan_term' => 'required',
+            'amount' => 'integer|required|min:100',
+            'loan_term' => 'integer|required',
             'repayment_frequency' => 'required',
         ]);
          

@@ -26,8 +26,10 @@ Youtube demonstration: https://youtu.be/0QF3Jfd4_4U
 ## Assumptions
 1. Since all the loans are assumed to have a “weekly” repayment frequency, the loan term will be simplified and defined in terms of week as well, defined as minimum of 4 and maximum of 36, these are just some arbitrary number that make sense to me.
 2. Loan repayment amount is fixed upon creation and the user can't choose how much to pay. This is simplified because the alternative will cause changes on the remaining outstanding payment(s), and I'm not sure the rules of calculation for Aspire in that scenario
-3. Improvement needed: due to limited time, I only manage to create 1 role, an admin role (admin@email.com) is hardcoded to approve the loan.
-4. Improvement needed: Currently we can select any of the repayments without following sequence
+3. Loan amount mustn't be negative, minimum of $100
+4. Improvement needed: due to limited time, I only manage to create 1 role, an admin role (admin@email.com) is hardcoded to approve the loan.
+5. Improvement needed: Currently we can select any of the repayments without following sequence
+
 
 The solution consist of backend API and a simple React frontend that consume the API.
 
