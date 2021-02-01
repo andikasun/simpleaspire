@@ -1,0 +1,2 @@
+user_id,amount,loan_term,repayment_frequency,status
+1,1200,12,WEEKLY,APPLIED
